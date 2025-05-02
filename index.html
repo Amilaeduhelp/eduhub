@@ -322,6 +322,9 @@
             .info-section h2 { font-size: 1.4rem; }
             .info-section p { font-size: 0.95rem; }
         }
+			h4.section-title::after {
+			display: none; /* This hides the ::after pseudo-element specifically for h4 tags with the class section-title */
+		}		
     </style>
 </head>
 <body>
@@ -345,7 +348,8 @@
 
     <main class="container">
         <section class="resources-section">
-            <h2 class="section-title">Academic Resources</h2>
+            <h2 class="section-title">RESEARCH HUB</h2>
+			<h4 class="section-title">Academic Resources-ඔබගේ ශාස්ත්‍රීය පර්යේෂණයට වඩාත් උපකාරී වල සැබැඳි එකතුව එක ම තැනකින්</h4>
             <div class="grid-container" id="resourcesGrid">
                 <div class="resource-card animate__animated">
                     <div class="card-header">Google Scholar</div>
@@ -476,15 +480,6 @@
                         <p class="resource-description">Comprehensive educational terminology and definitions.</p>
                         <a href="https://www.eduhelp.lk/index.php/uncategorized/36660/" target="_blank" class="btn">
                             <i class="fas fa-spell-check"></i> Learn
-                        </a>
-                    </div>
-                </div>
-                 <div class="resource-card animate__animated">
-                    <div class="card-header">Edu Hub</div>
-                    <div class="card-body">
-                        <p class="resource-description">Central hub for accessing various educational resources.</p>
-                        <a href="https://www.eduhelp.lk/index.php/uncategorized/36687/" target="_blank" class="btn">
-                            <i class="fas fa-network-wired"></i> Access
                         </a>
                     </div>
                 </div>
