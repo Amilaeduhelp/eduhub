@@ -148,6 +148,8 @@
             display: flex;
             flex-direction: column;
             height: 100%;
+            cursor: pointer;
+            position: relative;
         }
 
         .resource-card:hover {
@@ -180,10 +182,11 @@
             line-height: 1.5;
         }
 
+        /* MODIFIED: Changed button style to white background with centered text */
         .btn {
-            background: linear-gradient(to right, var(--primary-color), #046A38); /* Adjusted gradient */
-            color: white;
-            border: none;
+            background: #FFFFFF; /* White background */
+            color: var(--dark); /* Dark text color */
+            border: 1px solid #ddd; /* Light border */
             padding: 12px 20px;
             border-radius: 8px;
             cursor: pointer;
@@ -200,7 +203,7 @@
         }
 
         .btn:hover {
-            background: linear-gradient(to right, #046A38, var(--primary-color)); /* Adjusted gradient */
+            background: #f5f5f5; /* Very light gray on hover */
             box-shadow: 0 5px 12px rgba(0,0,0,0.2);
         }
 
@@ -322,9 +325,9 @@
             .info-section h2 { font-size: 1.4rem; }
             .info-section p { font-size: 0.95rem; }
         }
-			h4.section-title::after {
-			display: none; /* This hides the ::after pseudo-element specifically for h4 tags with the class section-title */
-		}		
+        h4.section-title::after {
+            display: none; /* This hides the ::after pseudo-element specifically for h4 tags with the class section-title */
+        }		
     </style>
 </head>
 <body>
@@ -418,6 +421,75 @@
         </section>
 
         <section class="resources-section">
+            <h2 class="section-title">නොමිලේ පින්තූර ලබාගැනීමට</h2>
+            <div class="grid-container" id="freeImagesGrid">
+                <div class="resource-card animate__animated">
+                    <div class="card-header">Pixabay</div>
+                    <div class="card-body">
+                        <p class="resource-description">Over 2.6 million+ high quality stock images, videos and music shared by our talented community.</p>
+                        <a href="https://pixabay.com/" target="_blank" class="btn">
+                            <i class="fas fa-images"></i> Browse
+                        </a>
+                    </div>
+                </div>
+                <div class="resource-card animate__animated">
+                    <div class="card-header">Unsplash</div>
+                    <div class="card-body">
+                        <p class="resource-description">Beautiful, free images and photos that you can download and use for any project.</p>
+                        <a href="https://unsplash.com/" target="_blank" class="btn">
+                            <i class="fas fa-camera"></i> Explore
+                        </a>
+                    </div>
+                </div>
+                <div class="resource-card animate__animated">
+                    <div class="card-header">Pexels</div>
+                    <div class="card-body">
+                        <p class="resource-description">Free stock photos, royalty free images & videos shared by creators.</p>
+                        <a href="https://www.pexels.com/" target="_blank" class="btn">
+                            <i class="fas fa-photo-video"></i> Discover
+                        </a>
+                    </div>
+                </div>
+                <div class="resource-card animate__animated">
+                    <div class="card-header">Canva</div>
+                    <div class="card-body">
+                        <p class="resource-description">Free design tool with millions of photos, templates, and easy editing features.</p>
+                        <a href="https://www.canva.com/" target="_blank" class="btn">
+                            <i class="fas fa-palette"></i> Create
+                        </a>
+                    </div>
+                </div>
+                <div class="resource-card animate__animated">
+                    <div class="card-header">Freepik</div>
+                    <div class="card-body">
+                        <p class="resource-description">Millions of free graphic resources: vectors, photos, PSD, and icons.</p>
+                        <a href="https://www.freepik.com/" target="_blank" class="btn">
+                            <i class="fas fa-vector-square"></i> Download
+                        </a>
+                    </div>
+                </div>
+                <div class="resource-card animate__animated">
+                    <div class="card-header">Flaticon</div>
+                    <div class="card-body">
+                        <p class="resource-description">Free vector icons in SVG, PSD, PNG, EPS format or as icon font.</p>
+                        <a href="https://www.flaticon.com/" target="_blank" class="btn">
+                            <i class="fas fa-icons"></i> Get Icons
+                        </a>
+                    </div>
+                </div>
+                <div class="resource-card animate__animated">
+                    <div class="card-header">Wikimedia Commons</div>
+                    <div class="card-body">
+                        <p class="resource-description">A collection of freely usable media files to which anyone can contribute.</p>
+                        <a href="https://commons.wikimedia.org/wiki/Main_Page" target="_blank" class="btn">
+                            <i class="fas fa-globe"></i> Access
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="resources-section">
             <h2 class="section-title">EduHelp Resources</h2>
             <div class="grid-container" id="eduHelpGrid">
                  <div class="resource-card animate__animated">
@@ -493,7 +565,7 @@
                     </div>
                 </div>
                  <div class="resource-card animate__animated">
-                    <div class="card-header">Edu index</div>
+                    <div class="card-header">විශ්ව සුචිය</div>
                     <div class="card-body">
                         <p class="resource-description">Universal index for educational resources in Sinhala.</p>
                         <a href="https://www.eduhelp.lk/index.php/universal-index/" target="_blank" class="btn">
@@ -505,7 +577,7 @@
         </section>
 
         <div class="info-section">
-            <h2>RESEARCH HUB: පර්යේෂණ සහයක</h2>
+            <h2>EDU-HUB: පර්යේෂණ සහයක</h2>
             <p>වඩාත් සාර්ථක නිබන්ධනයක් සඳහා සහය වේ.</p>
             <p>සියලුම පර්යේෂණ ආධාරක සඳහා පහසු ප්‍රවේශයක්!</p>
         </div>
@@ -527,6 +599,21 @@
             cards.forEach((card, index) => {
                 card.style.animationDelay = `${index * 100}ms`;
                 card.classList.add('animate__animated', 'animate__fadeInUp');
+                
+                // Add click event to the entire card
+                card.addEventListener('click', function() {
+                    // Find the button link inside this card
+                    const link = this.querySelector('.btn');
+                    if (link) {
+                        // Get the URL from the link
+                        const url = link.getAttribute('href');
+                        // Open the URL in a new tab
+                        window.open(url, '_blank');
+                    }
+                });
+                
+                // Add cursor pointer style to show it's clickable
+                card.style.cursor = 'pointer';
             });
 
              document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -537,6 +624,13 @@
                     if(targetElement) {
                         targetElement.scrollIntoView({ behavior: 'smooth' });
                     }
+                });
+            });
+
+            // Prevent link click from triggering card click (event propagation)
+            document.querySelectorAll('.resource-card .btn').forEach(button => {
+                button.addEventListener('click', function(e) {
+                    e.stopPropagation();
                 });
             });
 
